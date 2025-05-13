@@ -24,3 +24,111 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Header fra forrig project før react */
+header {
+  background-image: linear-gradient(
+      260deg,
+      rgb(0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.4) 35%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url(/src/assets/img/DSC08462Flip.png);
+  background-repeat: no-repeat;
+  background-position: 30% 18%;
+
+  border-radius: 1rem;
+  border: solid 0.4rem rgb(15, 15, 15);
+
+  height: 30rem;
+  margin-inline: auto;
+}
+nav {
+  height: 100%;
+  padding: 5rem 2rem;
+}
+nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  row-gap: 0.5rem;
+}
+nav ul li {
+  grid-column: 2/-1;
+
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  overflow: hidden;
+  height: 2.5rem;
+}
+
+a {
+  position: relative;
+  text-align: end;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 2px;
+    background: var(--colorMenu);
+    scale: 0 1;
+    transform-origin: left;
+    transition: scale 0.8s linear;
+  }
+
+  &:hover::before {
+    scale: 1 1;
+    transform-origin: right;
+  }
+}
+
+/* Footer fra forrig project før tailwind */
+
+footer nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 1rem;
+}
+footer nav ul li {
+  grid-column: span 1;
+  grid-row: span 1;
+  justify-self: center;
+}
+footer nav ul li a:hover {
+  color: rgb(17, 17, 17);
+}
+
+/* Qualiifycations */
+#qualifications {
+  scroll-margin-top: 100px;
+  container: container / inline-size;
+  /* outline: dashed 2px red; */
+}
+#programs {
+  grid-column: 1/-1;
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 3rem;
+}
+@container container (width > 700px) {
+  #programs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 2rem;
+  }
+}
+@container container (width > 1000px) {
+  #programs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 2rem;
+  }
+}
